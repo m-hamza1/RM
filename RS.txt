@@ -1,3 +1,9 @@
+npx create-expo-app MyApp
+cd MyApp
+npx create-expo-app@latest MyApp
+npx expo start
+
+
 💡 1. Define an object in JavaScript. Give an example.
 🔹Answer:
 Objects are key-value pairs used to store structured data.
