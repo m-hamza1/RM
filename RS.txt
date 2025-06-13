@@ -1,0 +1,164 @@
+💡 1. Define an object in JavaScript. Give an example.
+🔹Answer:
+Objects are key-value pairs used to store structured data.
+
+js
+Copy
+Edit
+const book = {
+  title: "You Don't Know JS",
+  author: "Kyle Simpson",
+  publisher: "O'Reilly Media",
+  getBookDetails: function() {
+    console.log(`${this.title} is written by ${this.author} and published by ${this.publisher}`);
+  }
+};
+
+
+💡 2. How do you access object properties in JavaScript?
+🔹Answer:
+Dot notation: object.property
+
+Bracket notation: object["property"]
+
+js
+Copy
+Edit
+console.log(book.title);          // Dot notation
+console.log(book["publisher"]);  // Bracket notation
+
+
+💡 3. How to add, update, and delete properties in an object?
+js
+Copy
+Edit
+const person = {};
+person.name = "Robert";    // Add property
+person.age = 66;           // Add another
+console.log(person);       // { name: 'Robert', age: 66 }
+
+delete person.age;         // Delete property
+console.log(person);       // { name: 'Robert' }
+
+
+💡 4. Create a nested object and access a nested property.
+js
+Copy
+Edit
+const patient = {
+  name: {
+    firstName: "Shawn",
+    lastName: "Rowden"
+  },
+  communicationNumbers: [
+    { type: "Primary Phone", number: "(952) 254 9212" },
+    { type: "Home Telephone", number: "(212) 726 9545" }
+  ]
+};
+
+console.log(patient.name.lastName); // Rowden
+console.log(patient.communicationNumbers[0].number); // Primary Phone Number
+
+
+💡 5. What is object destructuring? Give example.
+js
+Copy
+Edit
+const myObject = { name: 'John', age: 30 };
+const { name, age } = myObject;
+
+console.log(name); // John
+console.log(age);  // 30
+
+
+💡 6. Use array destructuring to extract and swap values.
+js
+Copy
+Edit
+let a = 1, b = 2;
+[a, b] = [b, a];
+
+console.log(a); // 2
+console.log(b); // 1
+
+
+💡 7. What is the rest operator in JavaScript? Explain with object and array examples.
+js
+Copy
+Edit
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3)); // 6
+
+const myArray = [1, 2, 3, 4];
+const [x, y, ...rest] = myArray;
+console.log(rest); // [3, 4]
+
+const obj = { a: 1, b: 2, c: 3 };
+const { a, ...others } = obj;
+console.log(others); // { b: 2, c: 3 }
+
+
+💡 8. What is the spread operator? How is it different from rest?
+js
+Copy
+Edit
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const combined = [...arr1, ...arr2]; // Spread
+console.log(combined); // [1, 2, 3, 4]
+
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const merged = { ...obj1, ...obj2 }; // { a: 1, b: 2 }
+💡 9. Write a constructor function and create an object.
+js
+Copy
+Edit
+function Cat(name, type) {
+  this.name = name;
+  this.type = type;
+}
+
+const myCat = new Cat("Milo", "Persian");
+console.log(myCat.name); // Milo
+
+
+💡 10. Write code to get keys, values and entries of an object.
+js
+Copy
+Edit
+const person = { name: "John", age: 30 };
+
+console.log(Object.keys(person));   // ['name', 'age']
+console.log(Object.values(person)); // ['John', 30]
+console.log(Object.entries(person));// [['name', 'John'], ['age', 30]]
+
+
+💡 11. Difference between Object and Array in JavaScript?
+Array	Object
+Indexed by numbers	Key-value pairs
+Use [] notation	Use {} curly braces
+Ideal for lists	Ideal for records
+
+💡 12. What is the use of Object.assign()?
+js
+Copy
+Edit
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+Object.assign(target, source);
+console.log(target); // { a: 1, b: 4, c: 5 }
+💡 13. What happens when we delete a property from object? Show with example.
+js
+Copy
+Edit
+const book = {
+  title: "JS Basics",
+  pages: 200
+};
+
+delete book.pages;
+console.log(book); // { title: 'JS Basics' }
